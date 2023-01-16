@@ -2123,13 +2123,13 @@ pub fn impl_glfw(comptime glfw: type) type {
 
 pub fn impl_wgpu(comptime webgpu: type) type {
     return struct {
-        extern fn ImGui_ImplWGPU_Init(device: webgpu.Device, num_frames_in_flight: c_int, rt_format: webgpu.TextureFormat, depth_format: webgpu.TextureFormat) bool;
+        extern fn ImGui_ImplWGPU_Init(device: *webgpu.Device, num_frames_in_flight: c_int, rt_format: webgpu.TextureFormat, depth_format: webgpu.TextureFormat) bool;
         pub const init = ImGui_ImplWGPU_Init;
         extern fn ImGui_ImplWGPU_Shutdown() void;
         pub const shutdown = ImGui_ImplWGPU_Shutdown;
         extern fn ImGui_ImplWGPU_NewFrame() void;
         pub const newFrame = ImGui_ImplWGPU_NewFrame;
-        extern fn ImGui_ImplWGPU_RenderDrawData(draw_data: *DrawData, pass_encoder: webgpu.RenderPassEncoder) void;
+        extern fn ImGui_ImplWGPU_RenderDrawData(draw_data: *DrawData, pass_encoder: *webgpu.RenderPassEncoder) void;
         pub const renderDrawData = ImGui_ImplWGPU_RenderDrawData;
 
         extern fn ImGui_ImplWGPU_InvalidateDeviceObjects() void;
