@@ -258,8 +258,8 @@ IMGUI_C_API float ImGui_GetTreeNodeToLabelSpacing() { return ImGui::GetTreeNodeT
 IMGUI_C_API bool ImGui_CollapsingHeader(const char* label, bool* p_visible, ImGuiTreeNodeFlags flags) { return ImGui::CollapsingHeader(label, p_visible, flags); }
 IMGUI_C_API void ImGui_SetNextItemOpen(bool is_open, ImGuiCond cond) { return ImGui::SetNextItemOpen(is_open, cond); }
 
-// IMGUI_C_API bool ImGui_Selectable(const char* label, bool selected, ImGuiSelectableFlags flags, ImVec2 size) { return ImGui::Selectable(label, selected, flags, size); }
-IMGUI_C_API bool ImGui_Selectable(const char* label, bool* p_selected, ImGuiSelectableFlags flags, ImVec2 size) { return ImGui::Selectable(label, p_selected, flags, size); }
+IMGUI_C_API bool ImGui_Selectable(const char* label, bool selected, ImGuiSelectableFlags flags, ImVec2 size) { return ImGui::Selectable(label, selected, flags, size); }
+IMGUI_C_API bool ImGui_SelectablePtr(const char* label, bool* p_selected, ImGuiSelectableFlags flags, ImVec2 size) { return ImGui::Selectable(label, p_selected, flags, size); }
 
 IMGUI_C_API bool ImGui_BeginListBox(const char* label, ImVec2 size) { return ImGui::BeginListBox(label, size); }
 IMGUI_C_API void ImGui_EndListBox() { return ImGui::EndListBox(); }
@@ -282,8 +282,8 @@ IMGUI_C_API bool ImGui_BeginMainMenuBar() { return ImGui::BeginMainMenuBar(); }
 IMGUI_C_API void ImGui_EndMainMenuBar() { return ImGui::EndMainMenuBar(); }
 IMGUI_C_API bool ImGui_BeginMenu(const char* label, bool enabled) { return ImGui::BeginMenu(label, enabled); }
 IMGUI_C_API void ImGui_EndMenu() { return ImGui::EndMenu(); }
-// IMGUI_C_API bool ImGui_MenuItem(const char* label, const char* shortcut, bool selected, bool enabled) { return ImGui::MenuItem(label, shortcut, selected, enabled); }
-IMGUI_C_API bool ImGui_MenuItem(const char* label, const char* shortcut, bool* p_selected, bool enabled) { return ImGui::MenuItem(label, shortcut, p_selected, enabled); }
+IMGUI_C_API bool ImGui_MenuItem(const char* label, const char* shortcut, bool selected, bool enabled) { return ImGui::MenuItem(label, shortcut, selected, enabled); }
+IMGUI_C_API bool ImGui_MenuItemPtr(const char* label, const char* shortcut, bool* p_selected, bool enabled) { return ImGui::MenuItem(label, shortcut, p_selected, enabled); }
 
 IMGUI_C_API void ImGui_BeginTooltip() { return ImGui::BeginTooltip(); }
 IMGUI_C_API void ImGui_EndTooltip() { return ImGui::EndTooltip(); }

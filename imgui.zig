@@ -451,8 +451,10 @@ pub const collapsingHeader = ImGui_CollapsingHeader;
 extern fn ImGui_SetNextItemOpen(is_open: bool, cond: Cond) void;
 pub const setNextItemOpen = ImGui_SetNextItemOpen;
 
-extern fn ImGui_Selectable(label: [*:0]const u8, p_selected: *bool, flags: SelectableFlags, size: Vec2) bool;
+extern fn ImGui_Selectable(label: [*:0]const u8, selected: bool, flags: SelectableFlags, size: Vec2) bool;
 pub const selectable = ImGui_Selectable;
+extern fn ImGui_SelectablePtr(label: [*:0]const u8, p_selected: *bool, flags: SelectableFlags, size: Vec2) bool;
+pub const selectablePtr = ImGui_SelectablePtr;
 
 extern fn ImGui_BeginListBox(label: [*:0]const u8, size: Vec2) bool;
 pub const beginListBox = ImGui_BeginListBox;
@@ -493,8 +495,10 @@ extern fn ImGui_BeginMenu(label: [*:0]const u8, enabled: bool) bool;
 pub const beginMenu = ImGui_BeginMenu;
 extern fn ImGui_EndMenu() void;
 pub const endMenu = ImGui_EndMenu;
-extern fn ImGui_MenuItem(label: [*:0]const u8, shortcut: ?[*:0]const u8, p_selected: ?*bool, enabled: bool) bool;
+extern fn ImGui_MenuItem(label: [*:0]const u8, shortcut: ?[*:0]const u8, selected: bool, enabled: bool) bool;
 pub const menuItem = ImGui_MenuItem;
+extern fn ImGui_MenuItemPtr(label: [*:0]const u8, shortcut: ?[*:0]const u8, p_selected: ?*bool, enabled: bool) bool;
+pub const menuItemPtr = ImGui_MenuItemPtr;
 
 extern fn ImGui_BeginTooltip() void;
 pub const beginTooltip = ImGui_BeginTooltip;
