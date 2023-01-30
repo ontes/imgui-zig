@@ -1,4 +1,4 @@
-const imgui = @import("imgui.zig");
+const imgui = @import("imgui");
 const webgpu = @import("webgpu");
 
 extern fn ImGui_ImplWGPU_Init(device: *webgpu.Device, num_frames_in_flight: c_int, rt_format: webgpu.TextureFormat, depth_format: webgpu.TextureFormat) bool;
